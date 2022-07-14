@@ -81,28 +81,77 @@
 
 
 //888888888888888888888888888888888888888888
+let sum =0;
+let count = 0;
+let avg = 0;
 
-let sum = 0;
-let n = 0;
-let i = +prompt('Введите число');
-while(i != 0 && i != ' '){
-    if (i == 0 || i == ' '){
-     alert('всё-таки введите число от 1')
-       }
-    
-    n +=i;
-    sum +=i;  
-
+for(;;){
+    const number = +prompt('Введите число'); 
+    if(number !== number){//Nan !== Nan --true
+        console.log('Ошибка ввода');
+        break;
+    }
+    if(number === 0){
+        break;
+    }
+    // sum = sum + number;
+    sum += number;
+    // count = count + 1;
+    count +=1;
 }
-alert = +prompt('ещё ');
- 
- alert('Введено  чисел ' + n);
- alert('Сумма чисел   ' + sum);
+console.log(sum);
+console.log(count);
+avg = sum / count;
+console.log(avg);
+
+//9999999999999999999999999999999999999999
+
+let number = '';
+let str = '4 85 96 85 77 52 2 3 44 1 555 77 99 9 58 44 24 5 8 57';
+let maxNumber = -Infinity;
+let minNumber = Infinity;
+
+
+for(let i = 0; i <= str.length; i++) {
+    if(str[i] !== ' ' && str[i]  !== undefined) {
+        // number = number + str[i];
+        number += str[i];
+    }else{
+    console.log(number);
+    number = +number;
+
+    maxNumber = number > maxNumber ? number : maxNumber;
+    minNumber = number < minNumber ? number : minNumber;
+
+    number = ' ';
+
+    }
+}
+console.log(`maxNumber: ${maxNumber}`);
+console.log(`minNumber: ${minNumber}`);
+
+//2способ -----------------------------------------------------
+
+let str = '4 85 96 85 77 52 2 3 44 1 555 77 99 9 58 44 24 5 8 57';
+let strArr = str.split(' ');
+
+let maxNumber = strArr[0];
+let minNumber = strArr[0];
+
+for(let i = 0; i < strArr.length; i++){
+    const nuumber = +strArr[i];
+    maxNumber = nuumber > maxNumber ? nuumber : maxNumber;
+    minNumber = nuumber < minNumber ? nuumber : minNumber;
+}
+
+console.log(`maxNumber: ${maxNumber}`);
+console.log(`minNumber: ${minNumber}`);
 
 
 
- 
 
+
+//10------------------------------------
 
 
 
