@@ -1,4 +1,17 @@
 
+
+
+let a = [1, 2, 3];
+console.log(`a: ${a}`);
+
+let b = [...a];//новый массив//спрэт оператор
+//let b = a;// а тоже равно 10--сохраняется по ссылке
+console.log(`b: ${b}`);
+
+b.push(10);
+
+console.log(`a: ${a}`);
+console.log(`b: ${b}`);
 //111111111111111111111111111
 
                 // let i = 1;
@@ -153,7 +166,24 @@ console.log(`minNumber: ${minNumber}`);
 
 //10------------------------------------
 
+let count = 0;
+let sum = 0;
+let strRevers = '';
+let number = 1234567;
+let strOfNumber = `${number}`;
+// let strOfNumber = number.toString();
+for(let i = 0; i < strOfNumber.length; i ++){
+    console.log(+strOfNumber[i]);//1
+   sum += +strOfNumber[i];
+}
+for(let i = strOfNumber.length -1; i >= 0; i--){//4
+    strRevers = strRevers + strOfNumber[i];
+}
 
+
+console.log(strOfNumber.length);//2
+console.log(sum);//3
+console.log(+strRevers);//4
 
 
 
